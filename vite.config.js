@@ -3,8 +3,8 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  // GitHub Pages project sites are served at /repo-name/; user/org sites use '/'
-  base: process.env.BASE_PATH || '/',
+  // Relative base: works when opening dist/index.html locally and on GitHub Pages
+  base: process.env.BASE_PATH || './',
   build: {
     rollupOptions: {
       output: {
